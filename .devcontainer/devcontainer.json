@@ -1,0 +1,60 @@
+{
+  "name": "Python with UV and Ruff",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.debugpy",
+        "charliermarsh.ruff",
+        "ms-python.mypy-type-checker",
+        "tamasfe.even-better-toml",
+        "github.copilot",
+        "github.copilot-chat",
+        "bierner.markdown-mermaid",
+        "github.vscode-pull-request-github",
+        "eamodio.gitlens",
+        "ms-azuretools.vscode-containers",
+        "GitHub.github-vscode-theme",
+        "GitHub.remotehub",
+        "GitHub.codespaces",
+        "ms-vscode-remote.remote-containers",
+        "catppuccin.catppuccin-vsc-pack",
+        "enkia.tokyo-night"
+      ],
+      "settings": {
+        "workbench.colorTheme": "Catppuccin Frappé",
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.terminal.activateEnvironment": true,
+        "[python]": {
+          "editor.defaultFormatter": "charliermarsh.ruff",
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+          }
+        },
+        "python.languageServer": "Pylance",
+        "python.analysis.typeCheckingMode": "strict",
+        "python.analysis.autoImportCompletions": true,
+        "python.analysis.inlayHints.functionReturnTypes": true,
+        "python.analysis.inlayHints.variableTypes": true,
+        "ruff.enable": true,
+        "ruff.organizeImports": true,
+        "ruff.fixAll": true,
+        "mypy-type-checker.importStrategy": "fromEnvironment",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": false,
+        "files.autoSave": "onFocusChange",
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true
+      }
+    }
+  },
+  "postCreateCommand": "mkdir -p .vscode src tests && uv sync --all-extras --dev && pre-commit install && git config --global user.name 'untype' && git config --global user.email 'untype@users.noreply.github.com'",
+  "remoteUser": "root"
+}

@@ -1,0 +1,14 @@
+{
+    "workbench.colorTheme": "Catppuccin Frappé",
+    "workbench.iconTheme": "catppuccin-frappe",
+    "editor.fontSize": 14,
+    "debug.console.fontSize": 14,
+    "terminal.integrated.fontSize": 14,
+    "chat.editor.fontSize": 14,
+    "editor.minimap.enabled": false,
+    "workbench.startupEditor": "none",
+    "explorer.confirmDelete": false,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "workbench.sideBar.location": "right",
+    "chat.mcp.gallery.enabled": true
+}

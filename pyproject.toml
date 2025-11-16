@@ -1,0 +1,62 @@
+[project]
+name = "dev-env-py"
+version = "0.1.0"
+description = "Python development environment"
+readme = "README.md"
+requires-python = ">=3.12"
+
+# Add your runtime dependencies here
+# Example: dependencies = ["requests", "pandas", "numpy"]
+dependencies = [
+    "rich>=13.7.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+# Add development dependencies here (testing, linting, etc.)
+# Example: dev = ["pytest", "black", "mypy"]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "mypy>=1.7.0",
+    "ruff>=0.1.0",
+    "pre-commit>=3.5.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+# Ruff configuration
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+# Add the rules you want Ruff to check
+# See: https://docs.astral.sh/ruff/rules/
+select = ["E", "F", "I"]  # pycodestyle errors, pyflakes, isort
+ignore = []
+
+[tool.ruff.format]
+# Use double quotes for strings
+quote-style = "double"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--strict-markers",
+    "--strict-config",
+    "-ra",
+]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
