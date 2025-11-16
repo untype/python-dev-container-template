@@ -242,9 +242,4 @@ Each project gets its own isolated container - no conflicts between projects!
 - [Pre-commit](https://pre-commit.com/)
 
 ## 📄 License
-
-This template is free to use for any purpose. No attribution required.
-
----
-
-**Happy Coding! 🐍✨**
+MIT
