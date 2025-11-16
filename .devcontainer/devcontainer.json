@@ -55,6 +55,6 @@
       }
     }
   },
-  "postCreateCommand": "mkdir -p .vscode src tests && uv sync --all-extras --dev && pre-commit install && git config --global user.name 'untype' && git config --global user.email 'untype@users.noreply.github.com'",
+  "postCreateCommand": "mkdir -p .vscode src tests && uv sync --all-extras --dev && uv run pre-commit install && git config --global user.name 'untype' && git config --global user.email 'untype@users.noreply.github.com'",
   "remoteUser": "root"
 }
